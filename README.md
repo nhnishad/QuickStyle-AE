@@ -24,7 +24,7 @@ Perfect for motion designers who want a quick style manager inside After Effects
      `Program Files (x86)\Common Files\Adobe\CEP\extensions`
 
    - **macOS:**  
-     `/Applications/Adobe After Effects [version]/Scripts/ScriptUI Panels`
+     `/Library/Application Support/Adobe/CEP/extensions`
 
 3. Restart After Effects  
 4. Go to **Window → QuickStyle AE** to open the panel
