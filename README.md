@@ -52,7 +52,7 @@ Fonts are defined manually in the `main.js` file.
 
    ```js
    { name: "Font Name", postscriptName: "Font-PostScript-Name" }
-* Find postscriptName from https://fontdrop.info - drop your font and copy the name
+* Find postscriptName from https://fontdrop.info - drop your font and copy the name(if not working try using - on space)
    
 
 
