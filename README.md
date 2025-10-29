@@ -21,7 +21,7 @@ Perfect for motion designers who want a quick style manager inside After Effects
 2. Copy the `QuickStyle AE` folder to:
 
    - **Windows:**  
-     `Documents\Adobe\After Effects [version]\Scripts\ScriptUI Panels`
+     `Program Files (x86)\Common Files\Adobe\CEP\extensions`
 
    - **macOS:**  
      `/Applications/Adobe After Effects [version]/Scripts/ScriptUI Panels`
