@@ -59,6 +59,6 @@ Fonts are defined manually in the `main.js` file.
 1. Open the main.js file in the QuickStyle AE folder using any text editor.
 2. Find the effect list section (it looks like an array of objects).
 3. Add your effect in this format:
-   { name: "Effect Name", matchName: "ADBE EffectMatchName" }
-Like this - { name: "Fill", matchName: "ADBE Fill" }
+   { name: "Effect Name", matchName: "EffectMatchName" }
+Like this - { name: "Fill", matchName: "Fill" },
 
