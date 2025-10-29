@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>QuickStyle AE</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Control Row -->
+        <div class="control-row">
+            <input type="text" id="hexInput" placeholder="#FF6B6B" maxlength="7">
+            <button id="addBtn" class="btn add-btn" title="Add Color">+</button>
+            <button id="lockBtn" class="btn lock-btn locked" title="Unlock to Delete">
+                <span class="lock-icon">🔒</span>
+                <span class="unlock-icon">🔓</span>
+            </button>
+        </div>
+
+        <!-- Colors Grid -->
+        <div id="colorGrid" class="color-grid">
+            <!-- Colors will be added here -->
+        </div>
+
+        <!-- Dropdowns Section -->
+        <div class="dropdowns-section">
+            <!-- Font Dropdown -->
+            <select id="fontDropdown" class="dropdown">
+                <option value="">Select Font</option>
+            </select>
+            
+            <!-- Effects Dropdown -->
+            <select id="effectsDropdown" class="dropdown">
+                <option value="">Add Effect</option>
+            </select>
+        </div>
+
+        <!-- Mini Status -->
+        <div id="status" class="status"></div>
+    </div>
+
+    <script src="js/CSInterface.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

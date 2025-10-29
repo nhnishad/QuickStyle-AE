@@ -1,0 +1,294 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+*:focus,
+*:focus-visible,
+*:active,
+*:hover {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #262626;
+    color: #e0e0e0;
+    font-size: 10px;
+    user-select: none;
+    padding: 8px;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Control Row */
+.control-row {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 8px;
+}
+
+#hexInput {
+    flex: 1;
+    height: 24px;
+    max-width: 68px;
+    background: #1a1a1a;
+    border: 1px solid #3a3a3a;
+    border-radius: 3px;
+    color: #fff;
+    padding: 0 8px;
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+}
+
+#hexInput:focus {
+    background: #222;
+    border: 1px solid #3a3a3a !important; /* Keep same border */
+}
+
+#hexInput:hover {
+    border: 1px solid #3a3a3a !important; /* No change on hover */
+}
+
+#hexInput::placeholder {
+    color: #555;
+    text-transform: uppercase;
+}
+
+/* Buttons */
+.btn {
+    width: 24px;
+    height: 24px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.add-btn {
+    background: #5a9fd4;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.add-btn:hover {
+    background: #4a8fc4;
+}
+
+.add-btn:active {
+    transform: scale(0.9);
+}
+
+.lock-btn {
+    background: #3a3a3a;
+    font-size: 12px;
+    position: relative;
+}
+
+.lock-btn:hover {
+    background: #4a4a4a;
+}
+
+.lock-btn.locked {
+    background: #3a3a3a;
+}
+
+.lock-btn.locked .unlock-icon {
+    display: none;
+}
+
+.lock-btn.locked .lock-icon {
+    display: block;
+}
+
+.lock-btn:not(.locked) {
+    background: #5a5a5a;
+}
+
+.lock-btn:not(.locked) .lock-icon {
+    display: none;
+}
+
+.lock-btn:not(.locked) .unlock-icon {
+    display: block;
+}
+
+/* Color Grid */
+.color-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    padding: 6px;
+    background: #1a1a1a;
+    border-radius: 4px;
+    min-height: 32px;
+    max-width: 112px;
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-bottom: 8px;
+}
+
+.color-grid:empty::after {
+    content: 'Add colors with +';
+    color: #555;
+    font-size: 9px;
+    white-space: nowrap;
+    padding: 4px;
+}
+
+/* Color Dots */
+.color-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.1s;
+    border: 1px solid rgba(255,255,255,0.1);
+    flex-shrink: 0;
+}
+
+.color-dot:hover {
+    transform: scale(1.2);
+    z-index: 10;
+    border-color: #fff;
+}
+
+.color-dot:active {
+    transform: scale(0.95);
+}
+
+.color-dot.applied {
+    animation: flash 0.3s;
+}
+
+@keyframes flash {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+
+/* Delete button */
+.delete-btn {
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    width: 10px;
+    height: 10px;
+    background: #ff4444;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 8px;
+    line-height: 1;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+body.unlocked .color-dot:hover .delete-btn {
+    display: flex;
+}
+
+/* Dropdowns Section */
+.dropdowns-section {
+    border-top: 1px solid #3a3a3a;
+    padding-top: 8px;
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.dropdown {
+    width: 100%;
+    max-width: 112px;
+    height: 24px;
+    background: #1a1a1a;
+    border: 1px solid #3a3a3a;
+    border-radius: 3px;
+    color: #fff;
+    padding: 0 8px;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+.dropdown:focus {
+    background: #222;
+    border: 1px solid #3a3a3a !important; /* No change */
+}
+
+.dropdown:hover {
+    background: #222;
+    border: 1px solid #3a3a3a !important; /* No change */
+}
+
+.dropdown option {
+    background: #1a1a1a;
+    color: #fff;
+}
+
+/* Status */
+.status {
+    margin-top: 6px;
+    font-size: 9px;
+    color: #666;
+    text-align: center;
+    height: 12px;
+    white-space: nowrap;
+}
+
+.status.show {
+    color: #5a9fd4;
+}
+
+.status.error {
+    color: #ff6666;
+}
+
+.status.success {
+    color: #66ff66;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 3px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #3a3a3a;
+    border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #4a4a4a;
+}
+
+/* Remove all focus outlines globally */
+input:focus,
+select:focus,
+button:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
