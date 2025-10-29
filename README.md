@@ -52,6 +52,8 @@ Fonts are defined manually in the `main.js` file.
 
    ```js
    { name: "Font Name", postscriptName: "Font-PostScript-Name" }
+* Find postscriptName from https://fontdrop.info - drop your font and copy the name
+   
 
 
 ### 3. Add Effects
